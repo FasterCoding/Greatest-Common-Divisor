@@ -2,8 +2,6 @@
 
 int gcd(int a, int b) {
 
-    int result;
-
     if (b == 0) {
         return a;
     } else if (a == 0) {
@@ -11,14 +9,12 @@ int gcd(int a, int b) {
     } else {
 
         if (a > b) {
-            result = gcd(a - b, b);
+            return gcd(a - b, b);
         } else {
-            result = gcd(a, b - a);
+            return gcd(a, b - a);
         }
 
-    } 
-
-    return result;
+    }
 }
 
 int main(int argc, char *argv[]) {
