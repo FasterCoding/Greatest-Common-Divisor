@@ -5,6 +5,8 @@
 ### VSCode ###
 
 .vscode
+target
+.settings
 
 ### C++ ###
 # Prerequisites
