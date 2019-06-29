@@ -1,0 +1,15 @@
+{
+  "name": "@fastercoding/euclid-gcd",
+  "version": "1.0.0",
+  "description": "It contains a simple createst common divisor (gcd) script",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "FasterCoding",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.5.2"
+  }
+}
