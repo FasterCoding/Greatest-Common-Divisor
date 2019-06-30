@@ -22,8 +22,15 @@ public class Test {
             System.out.println(ex);
         }
 
-        result = Euclid.gcd(a,b);
+        int resultGCD = Euclid.gcd(a,b);
 
-        System.out.println("Greatest Common Divisor: " + result);
+        System.out.println("Greatest Common Divisor: " + resultGCD);
+
+        if (resultGCD == 1) {
+            int inverse = Euclid.moduloInverse(a, b);
+            System.out.println("Inverse of " + String.valueOf(a) + " mod " + String.valueOf(b) + " is: " + String.valueOf(inverse));
+        } else {
+            System.out.println("Inverse of " + String.valueOf(a) + " mod " + String.valueOf(b) + " is: No Inverse");
+        }
     }
 }

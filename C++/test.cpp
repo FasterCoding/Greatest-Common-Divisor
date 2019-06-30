@@ -12,10 +12,17 @@ int main(int argc, char const *argv[]) {
     std::cout << "Enter b: ";
     std::cin >> b;
 
-    int greatestCommonDivisor = Euclid::gcd(a, b);
+    int resultGCD = Euclid::gcd(a, b);
+    std::cout << "Greatest Common Divisor: " << resultGCD << std::endl;
 
-    std::cout << "Greatest Common Divisor: " << greatestCommonDivisor << std::endl;
+    int inverse = 0;
 
+    if (resultGCD == 1) {
+        inverse = Euclid::moduloInverseOf(a, b);
+        std::cout << "Inverse of " << a << " mod " << b << " is: " << inverse << std::endl;
+    } else {
+        std::cout << "Inverse of " << a << " mod " << b << " is: No Inverse" << std::endl;
+    }
 
     return 0;
 }
