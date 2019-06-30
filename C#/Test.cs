@@ -5,19 +5,22 @@ namespace Euclid {
     class Test {
         static void Main(string[] args) {
             
-            int a = 16;
-            int b = 24;
+            Console.Write("Enter a: ");
+            int a = Convert.ToInt32(Console.ReadLine());
 
-            int gcd = Euclid.gcd(a, b);
+            Console.Write("Enter b: ");
+            int b = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Greatest Common Divisor: " + gcd);
+            int resultGCD = Euclid.gcd(a, b);
 
-            int c = 15;
-            int d = 14;
+            Console.WriteLine("Greatest Common Divisor: " + resultGCD);
 
-            int gcd2 = Euclid.gcd(c, d);
-
-            Console.WriteLine("Greatest Common Divisor: " + gcd2);
+            if (resultGCD == 1) {
+                int inverse = Euclid.moduloInverse(a, b);
+                Console.WriteLine($"inverse of {a} mod {b} is: {inverse}");
+            }else {
+                Console.WriteLine($"inverse of {a} mod {b} is: No Inverse");
+            }
         }
     }
 }
