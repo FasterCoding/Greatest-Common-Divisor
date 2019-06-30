@@ -19,7 +19,7 @@ namespace Euclid {
         }
 
         public static (int x, int y) extgcd(int a, int b) {
-            // Return in x and y form a*x + b*y
+            // Return x and y in form a*x + b*y
             // x is the inverse of a
             // y is the inverse if b
             // There is only an inverse if gcd(a,b) == 1
@@ -28,7 +28,7 @@ namespace Euclid {
             }else {
                 var result = extgcd(b % a, a);
                 int ab = (int)Math.Floor((float)b / (float)a);
-                
+
                 result.x = (result.x - ab * result.y);
                 result.x = mod(result.x, b);
 
