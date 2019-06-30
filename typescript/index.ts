@@ -1,4 +1,4 @@
-import {Euclid} from "./src/euclid";
+import {Euclid} from "./src/Euclid";
 
 const a: number = 4;
 const b: number = 5;

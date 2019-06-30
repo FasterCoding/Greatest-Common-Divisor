@@ -1,4 +1,4 @@
-import {IExtEuclid} from "./iexteuclid";
+import {IExtEuclid} from "./IExtEuclid";
 
 export class Euclid {
 
