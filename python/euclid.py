@@ -5,7 +5,7 @@ def gcd(a, b):
     return a
 
 def extgcd(a, b):
-    # Return in form a*x + b*y
+    # Return in x and y form a*x + b*y
     # x is the inverse of a
     # y is the inverse if b
     # There is only an inverse if gcd(a,b) == 1
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     b = int(input("Enter b: "))
 
     resultGCD = gcd(a,b)
-    
+
     inverse = "No Inverse"
     if resultGCD == 1:
         inverse = moduloInverseOf(a, b)
