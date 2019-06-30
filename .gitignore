@@ -5,6 +5,13 @@
 ### VSCode ###
 
 .vscode
+target
+.settings
+node_modules
+dist
+package-lock.json
+obj
+bin
 
 ### C++ ###
 # Prerequisites
