@@ -12,12 +12,14 @@ def extgcd(a, b):
     if a == 0:
         return (0, 1)
     else:
-        y, x = extgcd(b % a, a)
-        return ((x - (b // a) * y) % b, y)
+        x, y = extgcd(b % a, a)
+        x1 = y - (b // a) * x
+        y1 = x
+        return (x1, y1)
 
 def moduloInverseOf(a, b):
     inv = extgcd(a, b)
-    return inv[0]
+    return inv[0] % b
 
 if __name__ == "__main__":
     
