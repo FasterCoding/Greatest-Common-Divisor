@@ -29,10 +29,10 @@ public class Euclid {
             int[] result = extgcd(b % a, a);
             int ab = (int)Math.floor(b / a);
 
-            result[0] = (result[0] - ab * result[1]) % b;
-            result[0] = mod(result[0], b);
+            int x = (result[1] - ab * result[0]);
+            int y = result[0];
 
-            return result;
+            return new int[]{x,y};
         }
     }
 
@@ -42,6 +42,6 @@ public class Euclid {
 
     public static int moduloInverse(int a, int b) {
         int[] result = extgcd(a, b);
-        return result[0];
+        return mod(result[0], b);
     }
 }

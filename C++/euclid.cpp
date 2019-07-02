@@ -21,14 +21,19 @@ std::tuple<int, int> Euclid::extgcd(int a, int b) {
         return std::make_tuple(0, 1);
     }else {
         std::tuple<int, int> result = extgcd(b % a, a);
-        int y = std::get<1>(result);
-        int x = (x - int(b / a) * y) % b;
 
-        return std::make_tuple(x, y);
+        int x1 = std::get<1>(result) - int(b / a) * std::get<0>(result);
+        int y1 = std::get<0>(result);
+
+        return std::make_tuple(x1, y1);
     }
+}
+
+int Euclid::mod(int a, int b) {
+    return ((a%b)+b) % b;
 }
 
 int Euclid::moduloInverseOf(int a, int b) {
     std::tuple<int, int> inv = extgcd(a, b);
-    return std::get<0>(inv);
+    return mod(std::get<0>(inv), b);
 }

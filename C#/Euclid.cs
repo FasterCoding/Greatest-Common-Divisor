@@ -29,10 +29,10 @@ namespace Euclid {
                 var result = extgcd(b % a, a);
                 int ab = (int)Math.Floor((float)b / (float)a);
 
-                result.x = (result.x - ab * result.y);
-                result.x = mod(result.x, b);
+                int x = result.y - ab * result.x;
+                int y = result.x;
 
-                return result;
+                return (x: x, y: y);
             }
         }
 
@@ -40,7 +40,7 @@ namespace Euclid {
 
         public static int moduloInverse(int a, int b) {
             (int x, int y) = extgcd(a, b);
-            return x;
+            return mod(x, b);
         }
 
     }

@@ -23,13 +23,13 @@ export class Euclid {
             return result;
         }else { 
 
-            let result: IExtEuclid = this.extgcd(b % a, a);
+            const result: IExtEuclid = this.extgcd(b % a, a);
             const ab = Math.floor(b / a);
 
-            result.x = (result.x - ab * result.y);
-            result.x = this.mod(result.x, b);
-
-            return result;
+            const x: number = (result.y - ab * result.x);
+            const y: number = result.x;
+            
+            return {x: x, y: y};
         }
     }
 
@@ -39,7 +39,7 @@ export class Euclid {
 
     static moduloInverse(a: number, b: number): number {
         const result: IExtEuclid = this.extgcd(a, b);
-        return result.x;
+        return this.mod(result.x, b);;
     }
 
 }

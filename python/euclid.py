@@ -12,23 +12,27 @@ def extgcd(a, b):
     if a == 0:
         return (0, 1)
     else:
-        y, x = extgcd(b % a, a)
-        return ((x - (b // a) * y) % b, y)
+        x, y = extgcd(b % a, a)
+        x1 = y - (b // a) * x
+        y1 = x
+        return (x1, y1)
 
 def moduloInverseOf(a, b):
     inv = extgcd(a, b)
-    return inv[0]
+    return inv[0] % b
 
 if __name__ == "__main__":
     
-    a = int(input("Enter a: "))
-    b = int(input("Enter b: "))
+    numberList = [0, 1, 2, 3, 4 ,5]
+    b = 5
 
-    resultGCD = gcd(a,b)
+    for a in numberList:
+        resultGCD = gcd(a,b)
 
-    inverse = "No Inverse"
-    if resultGCD == 1:
-        inverse = moduloInverseOf(a, b)
+        inverse = "No Inverse"
+        if resultGCD == 1:
+            inverse = moduloInverseOf(a, b)
 
-    print("Greatest Common Divisor: ", resultGCD)
-    print("Inverse of " + str(a) + " mod " + str(b) + " is: ", inverse)
+        print("Greatest Common Divisor: ", resultGCD)
+        print("Inverse of " + str(a) + " mod " + str(b) + " is: ", inverse)
+        print("------------------------------")
