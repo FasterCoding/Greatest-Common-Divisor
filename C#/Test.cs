@@ -8,7 +8,6 @@ namespace Euclid {
         static void Main(string[] args) {
 
             int[] numberList = {0, 1, 2, 3, 4, 5};
-
             int b = 5;
 
             foreach (int a in numberList) {
