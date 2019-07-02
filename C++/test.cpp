@@ -3,26 +3,31 @@
 #include "euclid.hpp"
 
 int main(int argc, char const *argv[]) {
-    
-    int a, b;
 
-    std::cout << "Enter a: ";
-    std::cin >> a;
+    int numberList[] = {0, 1, 2, 3, 4, 5};
+    int b = 5;
 
-    std::cout << "Enter b: ";
-    std::cin >> b;
+    int resultGCD;
+    int inverse;
 
-    int resultGCD = Euclid::gcd(a, b);
-    std::cout << "Greatest Common Divisor: " << resultGCD << std::endl;
+    for (int a: numberList) {
 
-    int inverse = 0;
+        resultGCD = Euclid::gcd(a, b);
+        std::cout << "Greatest Common Divisor: " << resultGCD << std::endl;
 
-    if (resultGCD == 1) {
-        inverse = Euclid::moduloInverseOf(a, b);
-        std::cout << "Inverse of " << a << " mod " << b << " is: " << inverse << std::endl;
-    } else {
-        std::cout << "Inverse of " << a << " mod " << b << " is: No Inverse" << std::endl;
+        inverse = 0;
+
+        if (resultGCD == 1) {
+            inverse = Euclid::moduloInverseOf(a, b);
+            std::cout << "Inverse of " << a << " mod " << b << " is: " << inverse << std::endl;
+        } else {
+            std::cout << "Inverse of " << a << " mod " << b << " is: No Inverse" << std::endl;
+        }
+
+        std::cout << "------------------------------" << std::endl;
     }
+
+    
 
     return 0;
 }
