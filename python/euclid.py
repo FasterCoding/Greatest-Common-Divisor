@@ -23,14 +23,16 @@ def moduloInverseOf(a, b):
 
 if __name__ == "__main__":
     
-    a = int(input("Enter a: "))
-    b = int(input("Enter b: "))
+    numberList = [0, 1, 2, 3, 4 ,5]
+    b = 5
 
-    resultGCD = gcd(a,b)
+    for a in numberList:
+        resultGCD = gcd(a,b)
 
-    inverse = "No Inverse"
-    if resultGCD == 1:
-        inverse = moduloInverseOf(a, b)
+        inverse = "No Inverse"
+        if resultGCD == 1:
+            inverse = moduloInverseOf(a, b)
 
-    print("Greatest Common Divisor: ", resultGCD)
-    print("Inverse of " + str(a) + " mod " + str(b) + " is: ", inverse)
+        print("Greatest Common Divisor: ", resultGCD)
+        print("Inverse of " + str(a) + " mod " + str(b) + " is: ", inverse)
+        print("------------------------------")
